@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Donate to Masjid Sunnah Construction Campaign. Support the building of a mosque in Mogadishu, Somalia." />
+  <title>Donate – Masjid Sunnah Construction Campaign</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Amiri:ital,wght@0,400;0,700;1,400&family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* ── Payment Panel Cards ─────────────────────────── */
+    .pm-panel-card {
+      border: 1.5px solid rgba(0,74,173,0.13);
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin-bottom: 4px;
+      background: var(--white);
+      box-shadow: 0 4px 18px rgba(0,74,173,0.08);
+      animation: panelFadeIn 0.3s ease;
+    }
+    @keyframes panelFadeIn {
+      from { opacity:0; transform:translateY(8px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
+    .pm-panel-header {
+      display: flex; align-items: center; gap: 14px;
+      padding: 16px 20px;
+      background: linear-gradient(135deg, rgba(0,74,173,0.05), rgba(0,74,173,0.02));
+      border-bottom: 1px solid rgba(0,74,173,0.08);
+    }
+    .pm-panel-logo {
+      width: 48px; height: 48px; border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; font-size: 1.5rem;
+      background: var(--off-white);
+      border: 1px solid rgba(0,0,0,0.07);
+    }
+    .pm-panel-title { font-family: var(--font-display); font-size: 0.95rem; color: var(--blue); font-weight: 700; }
+    .pm-panel-sub   { font-size: 0.75rem; color: var(--text-muted); margin-top: 2px; }
+    .pm-secure-badge {
+      margin-left: auto;
+      font-size: 0.68rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #1a7a4a;
+      background: rgba(26,122,74,0.1);
+      padding: 4px 10px; border-radius: 50px;
+      border: 1px solid rgba(26,122,74,0.2);
+      white-space: nowrap;
+    }
+    .pm-panel-body { padding: 20px; }
+
+    /* Steps (EVC) */
+    .pm-step-list { display: flex; flex-direction: column; gap: 12px; margin-bottom: 18px; }
+    .pm-step { display: flex; align-items: flex-start; gap: 12px; font-size: 0.86rem; color: var(--text-muted); }
+    .pm-step-num {
+      width: 24px; height: 24px; border-radius: 50%; flex-shrink: 0;
+      background: var(--blue); color: var(--white);
+      font-size: 0.72rem; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .pm-step-text strong { color: var(--text); }
+
+    /* Detail box (EVC) */
+    .pm-detail-box {
+      background: var(--off-white);
+      border: 1px solid rgba(0,74,173,0.1);
+      border-radius: var(--radius-sm);
+      overflow: hidden; margin-bottom: 16px;
+    }
+    .pm-detail-row {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 11px 16px; font-size: 0.84rem;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+    .pm-detail-row:last-child { border-bottom: none; }
+    .pm-detail-lbl { color: var(--text-muted); font-weight: 600; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; }
+    .pm-detail-val { color: var(--text); font-weight: 600; display: flex; align-items: center; gap: 8px; }
+    .copy-btn {
+      background: rgba(0,74,173,0.1); border: none;
+      color: var(--blue); font-size: 0.7rem; font-weight: 700;
+      padding: 3px 8px; border-radius: 4px; cursor: pointer;
+      transition: var(--transition);
+    }
+    .copy-btn:hover { background: var(--blue); color: var(--white); }
+    .pm-confirm-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      width: 100%; padding: 13px;
+      background: #25D366; color: var(--white);
+      border-radius: var(--radius-sm);
+      font-weight: 700; font-size: 0.9rem;
+      text-decoration: none;
+      transition: var(--transition);
+      box-shadow: 0 4px 14px rgba(37,211,102,0.3);
+    }
+    .pm-confirm-btn:hover { background: #1fb958; transform: translateY(-1px); }
+
+    /* Card visual preview */
+    .card-preview {
+      background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue-light) 100%);
+      border-radius: 14px;
+      padding: 20px 22px 18px;
+      color: white;
+      font-family: 'Courier New', monospace;
+      position: relative;
+      box-shadow: 0 8px 28px rgba(0,74,173,0.35);
+      min-height: 120px;
+    }
+    .card-preview-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; }
+    .card-preview-bank { font-family: var(--font-display); font-size: 0.78rem; letter-spacing: 0.12em; opacity: 0.85; text-transform: uppercase; }
+    .card-preview-chip {
+      width: 32px; height: 24px;
+      background: linear-gradient(135deg, #d4af37, #f5e9b8);
+      border-radius: 5px;
+      box-shadow: inset 0 1px 3px rgba(0,0,0,0.2);
+    }
+    .card-preview-number { font-size: 1.15rem; letter-spacing: 0.18em; margin-bottom: 16px; opacity: 0.92; }
+    .card-preview-bottom { display: flex; align-items: flex-end; gap: 16px; font-size: 0.75rem; }
+    .card-preview-name, .card-preview-exp { font-size: 0.82rem; letter-spacing: 0.08em; text-transform: uppercase; }
+    .card-preview-logo-wrap { margin-left: auto; display: flex; }
+
+    /* MasterCard circles */
+    .mc-circle { display: inline-block; border-radius: 50%; }
+    .mc-red    { background: #eb001b; width: 28px; height: 28px; }
+    .mc-orange { background: #f79e1b; width: 28px; height: 28px; margin-left: -12px; opacity: 0.95; }
+    .card-logo { background: linear-gradient(135deg, #1a1a2e, #0d3b6e); justify-content: center; gap: 0; }
+
+    /* Card trust row */
+    .pm-card-trust {
+      display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px;
+      font-size: 0.72rem; font-weight: 700; color: #1a7a4a;
+    }
+    .pm-card-trust span {
+      background: rgba(26,122,74,0.08);
+      border: 1px solid rgba(26,122,74,0.18);
+      padding: 4px 10px; border-radius: 50px;
+    }
+
+    /* PayPal UI */
+    .paypal-logo { background: #f5f7fa; border: 1.5px solid #d0d7e2; }
+    .paypal-btn {
+      width: 100%; padding: 13px;
+      background: #ffc439;
+      border: none; border-radius: var(--radius-sm);
+      font-size: 1rem; font-weight: 700; cursor: pointer;
+      display: flex; align-items: center; justify-content: center; gap: 6px;
+      box-shadow: 0 4px 14px rgba(255,196,57,0.4);
+      transition: var(--transition);
+      margin-bottom: 14px;
+    }
+    .paypal-btn:hover { background: #f0b429; transform: translateY(-1px); }
+    .paypal-or {
+      text-align: center; position: relative;
+      color: var(--text-muted); font-size: 0.78rem;
+      margin: 14px 0;
+    }
+    .paypal-or::before, .paypal-or::after {
+      content: ''; position: absolute; top: 50%;
+      width: 42%; height: 1px; background: #ddd;
+    }
+    .paypal-or::before { left: 0; }
+    .paypal-or::after  { right: 0; }
+    .paypal-divider { font-size: 0.78rem; color: var(--text-muted); text-align: center; margin-top: 4px; }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════════════
+       NAVIGATION
+  ═══════════════════════════════════════════════════════ -->
+  <nav class="navbar scrolled" id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="Masjid Sunnah Home">
+        <div class="logo-icon" aria-hidden="true">🕌</div>
+        <div class="logo-text">
+          <span class="logo-name">Masjid Sunnah</span>
+          <span class="logo-tagline">Construction Campaign</span>
+        </div>
+      </a>
+      <div class="nav-links" role="menubar">
+        <a href="index.html"   role="menuitem">Home</a>
+        <a href="index.html#about" role="menuitem">About</a>
+        <a href="index.html#updates" role="menuitem">Updates</a>
+        <a href="contact.html" role="menuitem">Contact</a>
+        <a href="donate.html" class="btn-donate-nav active" role="menuitem">Donate Now</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu" role="menu">
+      <a href="index.html"       role="menuitem">Home</a>
+      <a href="index.html#about" role="menuitem">About</a>
+      <a href="index.html#updates" role="menuitem">Updates</a>
+      <a href="contact.html"     role="menuitem">Contact</a>
+      <a href="donate.html" class="btn-donate-nav" role="menuitem">Donate Now</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ═══════════════════════════════════════════════════════
+         DONATE HERO
+    ═══════════════════════════════════════════════════════ -->
+    <section class="donate-hero" aria-labelledby="donate-hero-title">
+      <div class="container">
+        <span class="section-label" style="color:var(--gold-light);">Sadaqah Jariyah</span>
+        <h1 id="donate-hero-title">Give to Masjid Sunnah</h1>
+        <p>
+          Your contribution is a continuous act of worship. Every brick placed in this masjid
+          carries your name before Allah ﷻ — today and in eternity.
+        </p>
+
+        <!-- Progress Bar -->
+        <div class="donate-progress-wrap" role="progressbar" aria-valuenow="51" aria-valuemin="0" aria-valuemax="100" aria-label="Campaign 51% funded">
+          <div class="dp-label">
+            <span>$128,500 raised</span>
+            <strong>Goal: $250,000</strong>
+          </div>
+          <div class="progress-bar-wrap">
+            <div class="progress-bar-fill" id="donateProgressFill" data-width="51"></div>
+          </div>
+          <div class="dp-label" style="margin-top:6px;">
+            <span style="color:rgba(255,255,255,0.5);">843 donors</span>
+            <strong>51% Funded</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         DONATE FORM + SIDEBAR
+    ═══════════════════════════════════════════════════════ -->
+    <section class="donate-section section-pad" aria-labelledby="donate-form-title">
+      <div class="container">
+        <div class="donate-layout">
+
+          <!-- ── MAIN DONATION FORM ── -->
+          <div class="donate-card" role="region" aria-label="Donation form">
+
+            <h2 class="form-title" id="donate-form-title">Make Your Donation</h2>
+            <p class="form-subtitle">Choose an amount and your preferred payment method below.</p>
+
+            <!-- Frequency Tabs -->
+            <div class="freq-tabs" role="group" aria-label="Donation frequency">
+              <button class="freq-tab active" data-freq="once" aria-pressed="true">One-Time</button>
+              <button class="freq-tab"        data-freq="monthly" aria-pressed="false">Monthly</button>
+              <button class="freq-tab"        data-freq="weekly"  aria-pressed="false">Weekly</button>
+            </div>
+
+            <!-- Quick Amount Buttons -->
+            <fieldset style="border:none; padding:0; margin:0 0 6px;">
+              <legend style="font-size:0.8rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--text-muted); margin-bottom:12px;">Select Amount</legend>
+              <div class="amount-grid" role="group" aria-label="Quick amount selection">
+                <button class="amount-btn" data-amount="10"  type="button">$10</button>
+                <button class="amount-btn" data-amount="25"  type="button">$25</button>
+                <button class="amount-btn active" data-amount="50" type="button">$50</button>
+                <button class="amount-btn" data-amount="100" type="button">$100</button>
+                <button class="amount-btn" data-amount="250" type="button">$250</button>
+                <button class="amount-btn" data-amount="500" type="button">$500</button>
+              </div>
+            </fieldset>
+
+            <!-- Custom Amount -->
+            <div class="custom-amount-wrap">
+              <span class="currency" aria-hidden="true">$</span>
+              <input
+                type="number"
+                id="customAmount"
+                name="customAmount"
+                placeholder="Enter custom amount"
+                min="1"
+                step="1"
+                aria-label="Custom donation amount in USD"
+              />
+            </div>
+
+            <!-- Payment Methods -->
+            <p class="pm-label" id="pm-group-label">Payment Method</p>
+            <div class="pm-grid" role="group" aria-labelledby="pm-group-label">
+              <button class="pm-btn active" data-pm="evc" type="button" aria-pressed="true">
+                <span class="pm-icon" aria-hidden="true">📱</span>
+                <span class="pm-name">EVC Plus<br>/ Sahal</span>
+              </button>
+              <button class="pm-btn" data-pm="mastercard" type="button" aria-pressed="false">
+                <span class="pm-icon" aria-hidden="true">💳</span>
+                <span class="pm-name">MasterCard<br>/ Visa</span>
+              </button>
+              <button class="pm-btn" data-pm="paypal" type="button" aria-pressed="false">
+                <span class="pm-icon" aria-hidden="true">🅿️</span>
+                <span class="pm-name">PayPal</span>
+              </button>
+            </div>
+
+            <!-- Payment Details Panel (dynamic) -->
+            <div id="pmPanel" aria-live="polite">
+
+              <!-- ── EVC Plus / Sahal ── -->
+              <div id="panel-evc" class="pm-panel-card pm-panel-evc">
+                <div class="pm-panel-header">
+                  <div class="pm-panel-logo evc-logo">
+                    <span>📱</span>
+                  </div>
+                  <div>
+                    <div class="pm-panel-title">EVC Plus / Sahal</div>
+                    <div class="pm-panel-sub">Somali Mobile Money — Instant Transfer</div>
+                  </div>
+                  <div class="pm-secure-badge">🔒 Secure</div>
+                </div>
+                <div class="pm-panel-body">
+                  <div class="pm-step-list">
+                    <div class="pm-step">
+                      <div class="pm-step-num">1</div>
+                      <div class="pm-step-text">Open your <strong>EVC Plus</strong> or <strong>Sahal</strong> app on your phone.</div>
+                    </div>
+                    <div class="pm-step">
+                      <div class="pm-step-num">2</div>
+                      <div class="pm-step-text">Send your donation to the number below.</div>
+                    </div>
+                    <div class="pm-step">
+                      <div class="pm-step-num">3</div>
+                      <div class="pm-step-text">Use <strong>DONATION</strong> as the reference/note.</div>
+                    </div>
+                    <div class="pm-step">
+                      <div class="pm-step-num">4</div>
+                      <div class="pm-step-text">Screenshot your receipt and WhatsApp it to us to confirm.</div>
+                    </div>
+                  </div>
+                  <div class="pm-detail-box">
+                    <div class="pm-detail-row">
+                      <span class="pm-detail-lbl">Send To</span>
+                      <span class="pm-detail-val copyable" data-copy="+252610000000">+252 61 XXX XXXX <button class="copy-btn" aria-label="Copy number">⧉ Copy</button></span>
+                    </div>
+                    <div class="pm-detail-row">
+                      <span class="pm-detail-lbl">Account Name</span>
+                      <span class="pm-detail-val">Masjid Sunnah Construction</span>
+                    </div>
+                    <div class="pm-detail-row">
+                      <span class="pm-detail-lbl">Reference</span>
+                      <span class="pm-detail-val"><strong>DONATION</strong></span>
+                    </div>
+                  </div>
+                  <a href="https://wa.me/252000000000?text=Assalamu%20Alaykum%2C%20I%20have%20sent%20my%20donation%20via%20EVC%20Plus." target="_blank" rel="noopener noreferrer" class="pm-confirm-btn whatsapp-confirm">
+                    💬 Confirm via WhatsApp
+                  </a>
+                </div>
+              </div>
+
+              <!-- ── MasterCard / Visa ── -->
+              <div id="panel-mastercard" class="pm-panel-card pm-panel-card" style="display:none;">
+                <div class="pm-panel-header">
+                  <div class="pm-panel-logo card-logo">
+                    <span class="card-chip"></span>
+                    <div class="card-logo-icons">
+                      <span class="mc-circle mc-red"></span>
+                      <span class="mc-circle mc-orange"></span>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="pm-panel-title">MasterCard / Visa</div>
+                    <div class="pm-panel-sub">Secure card payment — SSL encrypted</div>
+                  </div>
+                  <div class="pm-secure-badge">🔒 SSL</div>
+                </div>
+                <div class="pm-panel-body">
+                  <!-- Card number field -->
+                  <div class="card-ui">
+                    <!-- Visual card preview -->
+                    <div class="card-preview" aria-hidden="true">
+                      <div class="card-preview-top">
+                        <span class="card-preview-bank">Masjid Sunnah</span>
+                        <div class="card-preview-chip"></div>
+                      </div>
+                      <div class="card-preview-number" id="cardPreviewNum">•••• •••• •••• ••••</div>
+                      <div class="card-preview-bottom">
+                        <div>
+                          <div style="font-size:0.52rem; opacity:0.6; text-transform:uppercase; letter-spacing:0.1em;">Card Holder</div>
+                          <div class="card-preview-name" id="cardPreviewName">YOUR NAME</div>
+                        </div>
+                        <div style="text-align:right;">
+                          <div style="font-size:0.52rem; opacity:0.6; text-transform:uppercase; letter-spacing:0.1em;">Expires</div>
+                          <div class="card-preview-exp" id="cardPreviewExp">MM / YY</div>
+                        </div>
+                        <div class="card-preview-logo-wrap">
+                          <span class="mc-circle mc-red" style="width:22px;height:22px;"></span>
+                          <span class="mc-circle mc-orange" style="width:22px;height:22px;margin-left:-10px;"></span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Card form fields -->
+                    <div class="form-group" style="margin-top:18px;">
+                      <label for="cardNumber">Card Number</label>
+                      <div style="position:relative;">
+                        <input type="text" id="cardNumber" name="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19" inputmode="numeric" autocomplete="cc-number" style="padding-right:50px;" />
+                        <span id="cardTypeIcon" style="position:absolute; right:14px; top:50%; transform:translateY(-50%); font-size:1.2rem;">💳</span>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="cardName">Name on Card</label>
+                      <input type="text" id="cardName" name="cardName" placeholder="Ahmed Hassan" autocomplete="cc-name" />
+                    </div>
+                    <div class="form-row">
+                      <div class="form-group">
+                        <label for="cardExpiry">Expiry Date</label>
+                        <input type="text" id="cardExpiry" name="cardExpiry" placeholder="MM / YY" maxlength="7" inputmode="numeric" autocomplete="cc-exp" />
+                      </div>
+                      <div class="form-group">
+                        <label for="cardCvv">CVV <span style="cursor:help; color:var(--text-muted);" title="3-digit code on the back of your card">ℹ</span></label>
+                        <input type="text" id="cardCvv" name="cardCvv" placeholder="•••" maxlength="4" inputmode="numeric" autocomplete="cc-csc" />
+                      </div>
+                    </div>
+                    <div class="pm-card-trust">
+                      <span>🔒 256-bit SSL</span>
+                      <span>🛡️ PCI Compliant</span>
+                      <span>✅ 3D Secure</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ── PayPal ── -->
+              <div id="panel-paypal" class="pm-panel-card" style="display:none;">
+                <div class="pm-panel-header">
+                  <div class="pm-panel-logo paypal-logo">
+                    <span style="font-size:1.5rem; font-weight:900; font-family:Arial,sans-serif;">
+                      <span style="color:#003087;">Pay</span><span style="color:#009cde;">Pal</span>
+                    </span>
+                  </div>
+                  <div>
+                    <div class="pm-panel-title">PayPal</div>
+                    <div class="pm-panel-sub">Pay with PayPal balance or any card</div>
+                  </div>
+                  <div class="pm-secure-badge">🔒 Secure</div>
+                </div>
+                <div class="pm-panel-body">
+                  <div class="paypal-ui">
+                    <div class="paypal-email-wrap">
+                      <div class="form-group" style="margin-bottom:10px;">
+                        <label for="paypalEmail">PayPal Email Address</label>
+                        <input type="email" id="paypalEmail" name="paypalEmail" placeholder="your@email.com" autocomplete="email" />
+                      </div>
+                      <p class="paypal-or"><span>or</span></p>
+                      <button type="button" class="paypal-btn" aria-label="Pay with PayPal">
+                        <span style="color:#003087; font-weight:900; font-size:1.15rem; font-family:Arial,sans-serif;">Pay</span><span style="color:#009cde; font-weight:900; font-size:1.15rem; font-family:Arial,sans-serif;">Pal</span>
+                      </button>
+                      <div class="paypal-divider">No PayPal account? Pay by card below.</div>
+                      <div class="pm-card-trust" style="margin-top:12px;">
+                        <span>🔒 Buyer Protection</span>
+                        <span>🌍 140+ Currencies</span>
+                        <span>✅ Instant Receipt</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Donor Details -->
+            <div style="margin-top:24px;">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="firstName">First Name</label>
+                  <input type="text" id="firstName" name="firstName" placeholder="Ahmed" autocomplete="given-name" />
+                </div>
+                <div class="form-group">
+                  <label for="lastName">Last Name</label>
+                  <input type="text" id="lastName" name="lastName" placeholder="Hassan" autocomplete="family-name" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="ahmed@example.com" autocomplete="email" />
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone (optional)</label>
+                <input type="tel" id="phone" name="phone" placeholder="+252 61 000 0000" autocomplete="tel" />
+              </div>
+              <div class="form-group">
+                <label for="message">Message / Du'a (optional)</label>
+                <textarea id="message" name="message" rows="3" placeholder="May Allah accept this donation on behalf of…"></textarea>
+              </div>
+
+              <div class="form-check">
+                <input type="checkbox" id="anonymous" name="anonymous" />
+                <label for="anonymous">Make my donation anonymous (your name will not appear publicly)</label>
+              </div>
+              <div class="form-check">
+                <input type="checkbox" id="agree" name="agree" required />
+                <label for="agree">I agree to the <a href="#" style="color:var(--blue);">Terms &amp; Conditions</a> and understand this is a charitable donation.</label>
+              </div>
+            </div>
+
+            <button type="button" class="btn-submit" id="donateBtn" aria-label="Submit donation">
+              🤲 Donate Now — <span id="btnAmount">$50</span>
+            </button>
+            <p class="secure-note" aria-label="Secure payment notice">
+              🔒 Secure &amp; Encrypted · 100% Goes to Construction
+            </p>
+
+          </div><!-- /donate-card -->
+
+          <!-- ── SIDEBAR ── -->
+          <aside class="donate-sidebar" aria-label="Donation information">
+
+            <!-- Impact Card -->
+            <div class="sidebar-card">
+              <h3 class="sc-title">Your Donation Impact</h3>
+              <div class="impact-list">
+                <div class="impact-item">
+                  <span class="ii-icon" aria-hidden="true">🧱</span>
+                  <div class="ii-text">
+                    <strong>$10 — 50 Bricks</strong>
+                    <span>Help build the walls of the prayer hall, brick by brick.</span>
+                  </div>
+                </div>
+                <div class="impact-item">
+                  <span class="ii-icon" aria-hidden="true">🪟</span>
+                  <div class="ii-text">
+                    <strong>$50 — Window Frame</strong>
+                    <span>Every window brings light into the house of Allah.</span>
+                  </div>
+                </div>
+                <div class="impact-item">
+                  <span class="ii-icon" aria-hidden="true">🚪</span>
+                  <div class="ii-text">
+                    <strong>$100 — Interior Door</strong>
+                    <span>Welcome worshippers through a door you helped build.</span>
+                  </div>
+                </div>
+                <div class="impact-item">
+                  <span class="ii-icon" aria-hidden="true">🕌</span>
+                  <div class="ii-text">
+                    <strong>$500 — Full Section</strong>
+                    <span>Fund an entire structural section of the masjid.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Verse Sidebar -->
+            <div class="sidebar-card" style="background: linear-gradient(135deg, var(--blue-dark), var(--blue)); color: white;">
+              <p class="verse-arabic" style="font-size:1.1rem; margin-bottom:12px;">«من بنى لله مسجداً»</p>
+              <p style="font-size:0.84rem; color:rgba(255,255,255,0.75); font-style:italic; margin-bottom:8px;">
+                "Whoever builds a mosque for Allah, Allah will build for him a house in Paradise."
+              </p>
+              <p style="font-size:0.72rem; color:var(--gold); text-transform:uppercase; letter-spacing:0.1em;">— Sahih al-Bukhari</p>
+            </div>
+
+            <!-- Campaign Progress -->
+            <div class="sidebar-card">
+              <h3 class="sc-title">Campaign Progress</h3>
+              <div class="progress-bar-wrap" style="margin-bottom:8px;" role="progressbar" aria-valuenow="51" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar-fill" data-width="51" style="background:linear-gradient(90deg, var(--blue), var(--blue-light)); width:0%;"></div>
+              </div>
+              <div style="display:flex; justify-content:space-between; font-size:0.78rem; color:var(--text-muted); margin-bottom:18px;">
+                <span>$128,500 raised</span><span><strong style="color:var(--blue);">51%</strong></span>
+              </div>
+              <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+                <div style="text-align:center; padding:12px; background:var(--off-white); border-radius:var(--radius-sm);">
+                  <div style="font-family:var(--font-display); font-size:1.3rem; color:var(--blue);">843</div>
+                  <div style="font-size:0.68rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.1em;">Donors</div>
+                </div>
+                <div style="text-align:center; padding:12px; background:var(--off-white); border-radius:var(--radius-sm);">
+                  <div style="font-family:var(--font-display); font-size:1.3rem; color:var(--blue);">38</div>
+                  <div style="font-size:0.68rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.1em;">Days Left</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Trust / Contact -->
+            <div class="sidebar-card">
+              <h3 class="sc-title" style="margin-bottom:12px;">Need Help?</h3>
+              <p style="font-size:0.84rem; color:var(--text-muted); margin-bottom:16px;">Have questions about your donation? Reach us directly.</p>
+              <a href="https://wa.me/252000000000" target="_blank" rel="noopener noreferrer"
+                 style="display:flex; align-items:center; gap:10px; background:#25D366; color:white; padding:12px 16px; border-radius:var(--radius-sm); font-weight:700; font-size:0.88rem; text-decoration:none; transition:var(--transition);">
+                💬 WhatsApp Support
+              </a>
+              <a href="contact.html" style="display:block; text-align:center; margin-top:10px; font-size:0.82rem; color:var(--blue); font-weight:600;">
+                Or visit our Contact page →
+              </a>
+            </div>
+
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         BOTTOM CTA
+    ═══════════════════════════════════════════════════════ -->
+    <section class="verse-banner fade-up" aria-label="Closing Quranic verse">
+      <div class="container">
+        <p class="verse-arabic">﴿وَمَا تُنفِقُوا مِن خَيْرٍ فَلِأَنفُسِكُمْ﴾</p>
+        <p class="verse-translation">"And whatever good you spend — it is for yourselves."</p>
+        <p class="verse-reference">— Surah Al-Baqarah, 2:272</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════════════════ -->
+  <footer class="footer" aria-label="Site footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="fg-brand">
+          <div class="nav-logo">
+            <div class="logo-icon" aria-hidden="true">🕌</div>
+            <div class="logo-text">
+              <span class="logo-name">Masjid Sunnah</span>
+              <span class="logo-tagline">Construction Campaign</span>
+            </div>
+          </div>
+          <p>Every donation — large or small — is a seed of Sadaqah Jariyah. May Allah accept from us all.</p>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Facebook">📘</a>
+            <a href="#" class="social-link" aria-label="Twitter">🐦</a>
+            <a href="#" class="social-link" aria-label="Instagram">📷</a>
+            <a href="#" class="social-link" aria-label="YouTube">▶️</a>
+          </div>
+        </div>
+        <div class="fg-col">
+          <h4>Quick Links</h4>
+          <a href="index.html">Home</a>
+          <a href="index.html#about">About the Project</a>
+          <a href="index.html#updates">Updates</a>
+          <a href="donate.html">Donate</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+        <div class="fg-col">
+          <h4>Campaign</h4>
+          <a href="#">Why We Build</a>
+          <a href="#">Construction Phases</a>
+          <a href="#">Transparency Report</a>
+          <a href="#">Volunteer</a>
+        </div>
+        <div class="fg-col">
+          <h4>Contact</h4>
+          <a href="tel:+252000000000">📞 +252 000 000 000</a>
+          <a href="mailto:info@masjidsunnah.so">✉️ info@masjidsunnah.so</a>
+          <a href="https://wa.me/252000000000" target="_blank" rel="noopener noreferrer">💬 WhatsApp Us</a>
+          <a href="contact.html">📍 Mogadishu, Somalia</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Masjid Sunnah Construction Campaign. All rights reserved.</p>
+        <div>
+          <a href="#">Privacy Policy</a>&nbsp;·&nbsp;
+          <a href="#">Terms of Use</a>&nbsp;·&nbsp;
+          <a href="#">Registered Charity</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════════════════════
+       JAVASCRIPT
+  ═══════════════════════════════════════════════════════ -->
+  <script>
+    // ── Hamburger ────────────────────────────────────────
+    const hamburger  = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => {
+      const open = mobileMenu.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', open);
+    });
+
+    // ── Progress bars ────────────────────────────────────
+    setTimeout(() => {
+      document.querySelectorAll('.progress-bar-fill').forEach(el => {
+        el.style.width = el.dataset.width + '%';
+      });
+    }, 400);
+
+    // ── Scroll reveal ────────────────────────────────────
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    // ── Frequency tabs ───────────────────────────────────
+    document.querySelectorAll('.freq-tab').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.freq-tab').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-pressed', 'false'); });
+        btn.classList.add('active');
+        btn.setAttribute('aria-pressed', 'true');
+      });
+    });
+
+    // ── Amount buttons ───────────────────────────────────
+    const customInput = document.getElementById('customAmount');
+    const btnAmount   = document.getElementById('btnAmount');
+    let selectedAmount = 50;
+
+    function updateBtnAmount(val) {
+      selectedAmount = val;
+      btnAmount.textContent = '$' + val;
+    }
+
+    document.querySelectorAll('.amount-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.amount-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        customInput.value = '';
+        updateBtnAmount(btn.dataset.amount);
+      });
+    });
+
+    customInput.addEventListener('input', () => {
+      document.querySelectorAll('.amount-btn').forEach(b => b.classList.remove('active'));
+      const val = customInput.value;
+      updateBtnAmount(val > 0 ? val : '?');
+    });
+
+    // ── Payment method toggle ─────────────────────────────
+    document.querySelectorAll('.pm-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.pm-btn').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-pressed', 'false'); });
+        btn.classList.add('active');
+        btn.setAttribute('aria-pressed', 'true');
+
+        // Show corresponding panel
+        document.querySelectorAll('#pmPanel > div').forEach(p => p.style.display = 'none');
+        const target = document.getElementById('panel-' + btn.dataset.pm);
+        if (target) target.style.display = 'block';
+      });
+    });
+
+    // ── Donate button ─────────────────────────────────────
+    document.getElementById('donateBtn').addEventListener('click', () => {
+      const agree = document.getElementById('agree');
+      if (!agree.checked) {
+        alert('Please agree to the Terms & Conditions to proceed.');
+        agree.focus();
+        return;
+      }
+      // Replace with real payment gateway redirect
+      alert('JazakAllahu Khayran! Processing your donation of $' + selectedAmount + '.\n\nYou will be redirected to the payment gateway. (Integration point)');
+    });
+  </script>
+
+</body>
+</html>

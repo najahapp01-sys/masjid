@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Masjid Sunnah – Construction Fundraising Campaign. Join us in building a house of Allah in Mogadishu." />
+  <title>Masjid Sunnah – Construction Campaign</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Amiri:ital,wght@0,400;0,700;1,400&family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════════════
+       NAVIGATION
+  ═══════════════════════════════════════════════════════ -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+
+      <!-- Logo -->
+      <a href="index.html" class="nav-logo" aria-label="Masjid Sunnah Home">
+        <div class="logo-icon" aria-hidden="true">🕌</div>
+        <div class="logo-text">
+          <span class="logo-name">Masjid Sunnah</span>
+          <span class="logo-tagline">Construction Campaign</span>
+        </div>
+      </a>
+
+      <!-- Desktop Links -->
+      <div class="nav-links" role="menubar">
+        <a href="index.html"   class="active" role="menuitem">Home</a>
+        <a href="#about"                       role="menuitem">About</a>
+        <a href="#updates"                     role="menuitem">Updates</a>
+        <a href="contact.html"                 role="menuitem">Contact</a>
+        <a href="donate.html" class="btn-donate-nav" role="menuitem">Donate Now</a>
+      </div>
+
+      <!-- Hamburger -->
+      <button class="hamburger" id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu" role="menu">
+      <a href="index.html"   role="menuitem">Home</a>
+      <a href="#about"       role="menuitem">About</a>
+      <a href="#updates"     role="menuitem">Updates</a>
+      <a href="contact.html" role="menuitem">Contact</a>
+      <a href="donate.html" class="btn-donate-nav" role="menuitem">Donate Now</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ═══════════════════════════════════════════════════════
+         HERO SECTION
+    ═══════════════════════════════════════════════════════ -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-bg" role="img" aria-label="Beautiful mosque architecture"></div>
+
+      <div class="hero-content">
+
+        <!-- Left: Copy -->
+        <div class="hero-left">
+          <div class="hero-badge">
+            <span aria-hidden="true"></span>
+            Campaign Active · Mogadishu, Somalia
+          </div>
+
+          <h1 class="hero-title" id="hero-title">
+            Build a House<br>
+            <span class="highlight">for Allah ﷻ</span>
+          </h1>
+
+          <p class="hero-verse">
+            "من بنى لله مسجداً بنى الله له بيتاً في الجنة"
+          </p>
+          <p class="hero-verse-ref">— Sahih al-Bukhari &amp; Sahih Muslim</p>
+
+          <p style="color:rgba(255,255,255,0.78); max-width:460px; margin-bottom:30px; font-size:0.96rem;">
+            Whoever builds a mosque for Allah, Allah will build for him a house in Paradise.
+            Be part of this <em>Sadaqah Jariyah</em> — a continuous reward that never ends.
+          </p>
+
+          <div class="hero-cta">
+            <a href="donate.html" class="btn-primary">
+              🤲 Donate Now
+            </a>
+            <a href="#about" class="btn-secondary">Learn More</a>
+          </div>
+        </div>
+
+        <!-- Right: Progress Card -->
+        <div class="hero-right" aria-label="Fundraising progress">
+          <div class="progress-card">
+            <p class="pc-title">Construction Progress</p>
+            <p class="pc-amount">$128,500</p>
+            <p class="pc-goal">raised of $250,000 goal</p>
+
+            <div class="progress-bar-wrap" role="progressbar" aria-valuenow="51" aria-valuemin="0" aria-valuemax="100" aria-label="51% funded">
+              <div class="progress-bar-fill" id="heroProgressFill" data-width="51"></div>
+            </div>
+            <p class="progress-pct">51% Funded</p>
+
+            <!-- Milestones -->
+            <div class="milestones" aria-label="Construction milestones">
+              <div class="milestone">
+                <span class="ms-dot done" aria-label="Completed"></span>
+                <span>Foundation &amp; Groundwork — Complete</span>
+              </div>
+              <div class="milestone">
+                <span class="ms-dot active" aria-label="In progress"></span>
+                <span>Structural Walls — In Progress</span>
+              </div>
+              <div class="milestone">
+                <span class="ms-dot" aria-label="Pending"></span>
+                <span>Roof &amp; Dome Construction</span>
+              </div>
+              <div class="milestone">
+                <span class="ms-dot" aria-label="Pending"></span>
+                <span>Interior Finishing &amp; Fitout</span>
+              </div>
+            </div>
+
+            <div class="pc-stats">
+              <div class="pc-stat">
+                <div class="pc-stat-num">843</div>
+                <div class="pc-stat-lbl">Donors</div>
+              </div>
+              <div class="pc-stat">
+                <div class="pc-stat-num">38</div>
+                <div class="pc-stat-lbl">Days Left</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll Indicator -->
+      <div class="scroll-indicator" aria-hidden="true">
+        <span>Scroll</span>
+        <div class="scroll-arrow"></div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         QURANIC VERSE BANNER
+    ═══════════════════════════════════════════════════════ -->
+    <section class="verse-banner fade-up" aria-label="Quranic verse about Sadaqah Jariyah">
+      <div class="container">
+        <p class="verse-arabic">
+          ﴿إِنَّمَا يَعْمُرُ مَسَاجِدَ اللَّهِ مَنْ آمَنَ بِاللَّهِ وَالْيَوْمِ الْآخِرِ﴾
+        </p>
+        <p class="verse-translation">
+          "The mosques of Allah are only to be maintained by those who believe in Allah and the Last Day."
+        </p>
+        <p class="verse-reference">— Surah At-Tawbah, 9:18</p>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         ABOUT / PROJECT SECTION
+    ═══════════════════════════════════════════════════════ -->
+    <section class="about-section section-pad" id="about" aria-labelledby="about-title">
+      <div class="container">
+        <div class="about-grid">
+
+          <!-- Image Side -->
+          <div class="about-img-wrap fade-up">
+            <img
+              src="https://images.unsplash.com/photo-1547119913-19b6afce361f?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="Beautiful mosque dome and architecture"
+              class="about-img"
+              loading="lazy"
+            />
+            <div class="about-img-badge">
+              <strong>2024</strong>
+              <span>Campaign Launch</span>
+            </div>
+          </div>
+
+          <!-- Text Side -->
+          <div class="about-text fade-up">
+            <span class="section-label">Our Project</span>
+            <h2 class="section-title" id="about-title">Building Masjid Sunnah<br>in Mogadishu</h2>
+            <div class="divider-gold" style="margin-left:0;"></div>
+
+            <p style="color:var(--text-muted); margin-bottom:24px; font-size:0.95rem;">
+              Masjid Sunnah is a community-driven mosque construction project in the heart of Mogadishu, Somalia. Our goal is to provide a spiritual sanctuary, an educational center, and a gathering point for the Muslim community — for generations to come.
+            </p>
+            <p style="color:var(--text-muted); margin-bottom:30px; font-size:0.95rem;">
+              Every brick laid, every pillar raised, is an act of <em>Sadaqah Jariyah</em> — a continuous charity whose reward flows even after we depart from this world. Join us in this noble cause.
+            </p>
+
+            <div class="about-points">
+              <div class="about-point">
+                <div class="ap-icon" aria-hidden="true">🕌</div>
+                <div class="ap-text">
+                  <strong>Capacity for 500+ Worshippers</strong>
+                  <span>Spacious prayer hall designed to serve the growing community of Mogadishu.</span>
+                </div>
+              </div>
+              <div class="about-point">
+                <div class="ap-icon" aria-hidden="true">📚</div>
+                <div class="ap-text">
+                  <strong>Islamic Education Center</strong>
+                  <span>Dedicated rooms for Quran classes, lectures, and youth programs.</span>
+                </div>
+              </div>
+              <div class="about-point">
+                <div class="ap-icon" aria-hidden="true">🌊</div>
+                <div class="ap-text">
+                  <strong>Full Wudu Facilities</strong>
+                  <span>Modern ablution area to accommodate worshippers at all prayer times.</span>
+                </div>
+              </div>
+            </div>
+
+            <a href="donate.html" class="btn-primary" style="margin-top:32px; display:inline-flex;">
+              Support the Project →
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         STATS STRIP
+    ═══════════════════════════════════════════════════════ -->
+    <section class="stats-strip fade-up" aria-label="Campaign statistics">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-num" data-count="843">843</div>
+            <div class="stat-lbl">Generous Donors</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">$128,500</div>
+            <div class="stat-lbl">Raised So Far</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">51%</div>
+            <div class="stat-lbl">Goal Reached</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">38</div>
+            <div class="stat-lbl">Days Remaining</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         SECOND VERSE BANNER
+    ═══════════════════════════════════════════════════════ -->
+    <section class="verse-banner fade-up" aria-label="Hadith about building mosques">
+      <div class="container">
+        <p class="verse-arabic">
+          «من بنى مسجداً يبتغي به وجه الله بنى الله له مثله في الجنة»
+        </p>
+        <p class="verse-translation">
+          "Whoever builds a mosque seeking thereby the pleasure of Allah, Allah will build for him a similar place in Paradise."
+        </p>
+        <p class="verse-reference">— Sahih al-Bukhari, Hadith 450</p>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         NEWS / UPDATES
+    ═══════════════════════════════════════════════════════ -->
+    <section class="news-section section-pad" id="updates" aria-labelledby="news-title">
+      <div class="container">
+        <div class="text-center fade-up">
+          <span class="section-label">Construction Updates</span>
+          <h2 class="section-title" id="news-title">Latest from the Site</h2>
+          <div class="divider-gold"></div>
+        </div>
+
+        <div class="cards-scroll fade-up">
+
+          <!-- Card 1 -->
+          <article class="news-card">
+            <img
+              src="https://images.unsplash.com/photo-1519817650390-64a93db51149?w=600&q=75"
+              alt="Foundation construction work"
+              class="nc-img"
+              loading="lazy"
+            />
+            <div class="nc-body">
+              <span class="nc-tag">Foundation Complete</span>
+              <h3 class="nc-title">Foundation Phase Successfully Completed</h3>
+              <p class="nc-excerpt">Alhamdulillah, the foundation has been laid and inspected. We are now moving into the structural wall phase of construction.</p>
+              <a href="#" class="nc-link">Read Update →</a>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="news-card">
+            <img
+              src="https://images.unsplash.com/photo-1708481686679-1bfebe1afefc?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="Structural walls being erected"
+              class="nc-img"
+              loading="lazy"
+            />
+            <div class="nc-body">
+              <span class="nc-tag">In Progress</span>
+              <h3 class="nc-title">Structural Walls Rising — Phase 2 Underway</h3>
+              <p class="nc-excerpt">Construction crews have begun erecting the main structural walls. Your donations are directly funding this critical phase.</p>
+              <a href="#" class="nc-link">Read Update →</a>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="news-card">
+            <img
+              src="https://plus.unsplash.com/premium_photo-1726761626379-29144f4ac1e3?q=80&w=871&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="Community fundraising event"
+              class="nc-img"
+              loading="lazy"
+            />
+            <div class="nc-body">
+              <span class="nc-tag">Community Event</span>
+              <h3 class="nc-title">Community Fundraising Dinner — June 2025</h3>
+              <p class="nc-excerpt">Join us for an evening of du'a, dinner, and dedication to the cause of building Masjid Sunnah. All proceeds go directly to construction.</p>
+              <a href="#" class="nc-link">Read Update →</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         DONATE TEASER / CTA SECTION
+    ═══════════════════════════════════════════════════════ -->
+    <section class="donate-teaser fade-up" aria-labelledby="cta-title">
+      <div class="container">
+        <h2 id="cta-title">Your Donation Builds a Legacy</h2>
+        <p>
+          Every dollar you give is recorded by Allah ﷻ. Make your <em>Sadaqah Jariyah</em> today
+          and earn reward that will outlast your lifetime.
+        </p>
+        <a href="donate.html" class="btn-primary">🤲 Donate Now — Any Amount Counts</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════════════════ -->
+  <footer class="footer" aria-label="Site footer">
+    <div class="container">
+      <div class="footer-grid">
+
+        <!-- Brand -->
+        <div class="fg-brand">
+          <div class="nav-logo">
+            <div class="logo-icon" aria-hidden="true">🕌</div>
+            <div class="logo-text">
+              <span class="logo-name">Masjid Sunnah</span>
+              <span class="logo-tagline">Construction Campaign</span>
+            </div>
+          </div>
+          <p>A community project to build a house of worship in Mogadishu, Somalia. Every donation is a brick in the foundation of our legacy.</p>
+          <div class="social-links" aria-label="Social media links">
+            <a href="#" class="social-link" aria-label="Facebook">📘</a>
+            <a href="#" class="social-link" aria-label="Twitter / X">🐦</a>
+            <a href="#" class="social-link" aria-label="Instagram">📷</a>
+            <a href="#" class="social-link" aria-label="YouTube">▶️</a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="fg-col">
+          <h4>Quick Links</h4>
+          <a href="index.html">Home</a>
+          <a href="#about">About the Project</a>
+          <a href="#updates">Construction Updates</a>
+          <a href="donate.html">Donate</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+
+        <!-- Campaign -->
+        <div class="fg-col">
+          <h4>Campaign</h4>
+          <a href="#">Why We Build</a>
+          <a href="#">Construction Phases</a>
+          <a href="#">How Funds Are Used</a>
+          <a href="#">Transparency Report</a>
+          <a href="#">Volunteer</a>
+        </div>
+
+        <!-- Contact -->
+        <div class="fg-col">
+          <h4>Contact</h4>
+          <a href="tel:+252000000000">📞 +252 000 000 000</a>
+          <a href="mailto:info@masjidsunnah.so">✉️ info@masjidsunnah.so</a>
+          <a href="https://wa.me/252000000000" target="_blank" rel="noopener noreferrer">💬 WhatsApp Us</a>
+          <a href="contact.html">📍 Mogadishu, Somalia</a>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 Masjid Sunnah Construction Campaign. All rights reserved.</p>
+        <div>
+          <a href="#">Privacy Policy</a>&nbsp;·&nbsp;
+          <a href="#">Terms of Use</a>&nbsp;·&nbsp;
+          <a href="#">Registered Charity</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════════════════════
+       JAVASCRIPT
+  ═══════════════════════════════════════════════════════ -->
+  <script>
+    // ── Navbar scroll effect ──────────────────────────────
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    // ── Hamburger toggle ─────────────────────────────────
+    const hamburger   = document.getElementById('hamburger');
+    const mobileMenu  = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => {
+      const open = mobileMenu.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', open);
+    });
+
+    // ── Scroll-reveal (IntersectionObserver) ─────────────
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    // ── Animate progress bar ─────────────────────────────
+    const fill = document.getElementById('heroProgressFill');
+    if (fill) {
+      setTimeout(() => {
+        fill.style.width = fill.dataset.width + '%';
+      }, 600);
+    }
+  </script>
+
+</body>
+</html>
